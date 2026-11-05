@@ -1,31 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Privacy Policy — DevTools for AI Agents</title>
-<style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;max-width:720px;margin:2rem auto;padding:0 1.25rem;color:#111;background:#fff}
-h1{font-size:1.6rem;margin-bottom:.25rem}h2{font-size:1.15rem;margin-top:1.75rem}.meta{color:#555;margin-bottom:1.5rem}a{color:#0b57d0}
-</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Privacy Policy: DevTools for AI Agents</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-<h1>Privacy Policy — DevTools for AI Agents</h1>
-<p class="meta"><strong>Effective date:</strong> November 5, 2026</p>
-<p>DevTools for AI Agents (“the Extension”) is developed and supported by an individual developer. This policy describes how the Extension handles data.</p>
-<h2>What the free Extension does</h2>
-<p>You choose what to import. The Extension only processes logs you explicitly paste, drop as a file, or import via a user-initiated clipboard action. It does <strong>not</strong> silently collect browsing history, page content, or agent traffic. Built-in “Load sample” items are synthetic fixtures only. We never collect or upload your real logs unless we first prompt you and you agree.</p>
-<p>Imported traces are processed <strong>locally</strong> in your browser and stored in IndexedDB on your device. Free forever for local debugging: <strong>nothing leaves your machine on free.</strong> Free includes unlimited local visualization, up to <strong>50</strong> traces of history, and basic PNG/JSON export. Removing the Extension or clearing site data may delete local history.</p>
-<p>Logs may contain prompts, tool arguments, results, or other sensitive information. Only import data you are authorized to inspect. Local processing does not automatically redact secrets.</p>
-<h2>Permissions</h2>
-<p>The Extension requests only <code>storage</code> and <code>sidePanel</code>. It does not request host permissions or capture tabs in the current version.</p>
-<h2>Support email</h2>
-<p>Support contact: <strong>agentdevtools@proton.me</strong>, delivered through <strong>Proton Mail</strong>. Proton encrypts email in transit and at rest under <a href="https://proton.me/legal/privacy">Proton’s privacy policy</a>. We retain support correspondence only as needed to reply and delete it on request. Do not email raw traces, API keys, or passwords.</p>
-<h2>Pro (not required for local use)</h2>
-<p>Pro is $9/month or $49 one-time: cost dashboards, exportable reports, team folders, priority parsers, unlimited history/search. Cloud share is planned later and will be opt-in; this policy will be updated before any cloud feature ships. Free remains local-only with no network calls.</p>
-<h2>Changes</h2>
-<p>We may update this policy. The effective date above will change when we do. Continued use after an update means you accept the revised policy.</p>
-<h2>Contact</h2>
-<p>Privacy or support: <strong>agentdevtools@proton.me</strong></p>
+</header>
+<h1 id="privacy-policy-devtools-for-ai-agents">Privacy Policy: DevTools
+for AI Agents</h1>
+<p><strong>Effective date:</strong> November 5, 2026</p>
+<p>DevTools for AI Agents is a Chrome extension built and supported by
+an individual developer. It turns AI agent traces you provide into a
+visual tool-call flow so you can see the arguments your agent actually
+sent.</p>
+<h2 id="the-short-version">The short version</h2>
+<ul>
+<li>The free version makes no network requests. Nothing leaves your
+machine on free.</li>
+<li>The extension only reads what you explicitly paste or drop into it.
+It never collects logs silently.</li>
+<li>Your traces are stored locally in your browser and nowhere
+else.</li>
+<li>We do not sell, share, or transfer user data, and we do not use
+analytics or tracking.</li>
+</ul>
+<h2 id="what-the-extension-accesses">What the extension accesses</h2>
+<p>You choose what to import by pasting text or dropping a file into the
+side panel. The extension parses that content locally to build the
+visualization. It does not read your browsing history, page content, or
+other tabs.</p>
+<p>The extension requests two Chrome permissions:</p>
+<ul>
+<li><code>storage</code>, to keep your trace history and settings on
+your device.</li>
+<li><code>sidePanel</code>, to show the visualizer in Chrome’s side
+panel.</li>
+</ul>
+<h2 id="local-storage-and-retention">Local storage and retention</h2>
+<p>Imported traces are stored in your browser’s local storage
+(IndexedDB) on your device. The free version keeps up to
+<strong>50</strong> traces of history; when you go past 50, the oldest
+trace is removed. You can delete traces at any time, and uninstalling
+the extension or clearing your browser’s site data removes them.</p>
+<p>PNG and JSON exports are files saved to your device at your request.
+The extension never shares them automatically.</p>
+<p>Agent logs can contain prompts, tool arguments, results, credentials,
+or personal information. Only import data you are allowed to inspect,
+and review exports before sharing them. Local processing does not redact
+or encrypt content for you.</p>
+<h2 id="sample-logs-and-consent">Sample logs and consent</h2>
+<p>We never collect real user logs. The built-in “Load sample” traces
+are synthetic. If we ever ask for sample logs to improve parsers, we
+will ask you first, explain what we need and why, and only use what you
+choose to send after you agree.</p>
+<h2 id="pro-features">Pro features</h2>
+<p>Pro ($9/month or $49 one-time) adds features such as cost dashboards,
+reports, and unlimited history. Any future Pro feature that sends data
+off your device, such as cloud sharing, will be opt-in, and this policy
+will be updated before it launches to describe exactly what is sent,
+where, and for how long. The free version will stay network-free.</p>
+<h2 id="support-email">Support email</h2>
+<p>Support is handled by email at
+<strong>agentdevtools@proton.me</strong>, hosted by Proton Mail. Proton
+encrypts stored mail, and <a
+href="https://proton.me/legal/privacy">Proton’s privacy policy</a>
+covers how messages are transmitted and stored. We keep support threads
+only as long as needed to reply, never use them for marketing, and
+delete them on request. Please don’t send raw traces, keys, or other
+secrets in a support email.</p>
+<h2 id="changes">Changes</h2>
+<p>If this policy changes, the updated version and its effective date
+will be posted at this same address.</p>
+<h2 id="contact">Contact</h2>
+<p>Questions about this policy:
+<strong>agentdevtools@proton.me</strong></p>
 </body>
 </html>
