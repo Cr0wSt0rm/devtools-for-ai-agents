@@ -182,74 +182,117 @@
   </style>
 </head>
 <body>
+<header id="title-block-header">
+<h1 class="title">Privacy Policy: DevTools for AI Agents</h1>
 </header>
 <h1 id="privacy-policy-devtools-for-ai-agents">Privacy Policy: DevTools
 for AI Agents</h1>
-<p><strong>Effective date:</strong> November 5, 2026</p>
-<p>DevTools for AI Agents is a Chrome extension built and supported by
-an individual developer. It turns AI agent traces you provide into a
-visual tool-call flow so you can see the arguments your agent actually
-sent.</p>
+<p><strong>Effective date:</strong> November 6, 2026</p>
+<p>DevTools for AI Agents is a free Chrome extension built and supported
+by an individual developer. It turns AI agent traces you provide into a
+visual tool-call flow so you can inspect the arguments, results, and
+timing of a run.</p>
 <h2 id="the-short-version">The short version</h2>
 <ul>
-<li>The free version makes no network requests. Nothing leaves your
-machine on free.</li>
-<li>The extension only reads what you explicitly paste or drop into it.
-It never collects logs silently.</li>
+<li>The extension operates locally and does not make external network
+requests for its own operation, including when importing traces, loading
+bundled samples, or exporting files.</li>
+<li>It only reads what you explicitly paste, drop, or choose as a local
+file, or a bundled synthetic sample you load yourself. It does not
+capture agent traffic or collect logs silently.</li>
 <li>Your traces are stored locally in your browser and nowhere
 else.</li>
-<li>We do not sell, share, or transfer user data, and we do not use
-analytics or tracking.</li>
+<li>We do not sell, share, or transfer user data. The extension has no
+analytics, tracking, advertising identifiers, or remote telemetry.</li>
+<li>There are no paid plans or payment flows in the extension, and no
+external service is required to use it.</li>
 </ul>
 <h2 id="what-the-extension-accesses">What the extension accesses</h2>
-<p>You choose what to import by pasting text or dropping a file into the
-side panel. The extension parses that content locally to build the
-visualization. It does not read your browsing history, page content, or
-other tabs.</p>
+<p>You choose what to import by pasting text, dropping a file, or
+picking a local file in the side panel. The extension parses that
+content locally to build the visualization. It does not read your
+browsing history, page content, or other tabs, and it does not capture
+live agent traffic.</p>
 <p>The extension requests two Chrome permissions:</p>
 <ul>
-<li><code>storage</code>, to keep your trace history and settings on
-your device.</li>
-<li><code>sidePanel</code>, to show the visualizer in Chrome’s side
+<li><code>storage</code>, to remember trace history and the last active
+run on your device.</li>
+<li><code>sidePanel</code>, to show the visualizer in Chrome's side
 panel.</li>
 </ul>
+<p>The packaged extension does not request host permissions for remote
+sites.</p>
 <h2 id="local-storage-and-retention">Local storage and retention</h2>
-<p>Imported traces are stored in your browser’s local storage
-(IndexedDB) on your device. The free version keeps up to
-<strong>50</strong> traces of history; when you go past 50, the oldest
-trace is removed. You can delete traces at any time, and uninstalling
-the extension or clearing your browser’s site data removes them.</p>
-<p>PNG and JSON exports are files saved to your device at your request.
-The extension never shares them automatically.</p>
+<p>Imported traces are stored in IndexedDB on your device. The extension
+keeps up to <strong>50</strong> local traces; when you go past 50, the
+oldest trace is removed. The last active run id is remembered in
+<code>chrome.storage.local</code> so the current run can be restored
+when you reopen the side panel.</p>
+<p>You can delete individual traces or clear your history in the
+extension. Uninstalling the extension or clearing its browser storage
+also removes your locally stored traces.</p>
+<p>Stored values are not encrypted by the extension. Treat the device
+and browser profile as the trust boundary.</p>
+<h2 id="bundled-samples-and-user-logs">Bundled samples and user
+logs</h2>
+<p>Built-in sample traces are synthetic fixtures bundled with the
+extension. Loading a sample does not fetch a trace from the internet or
+send your data anywhere. We do not collect real user logs through the
+extension.</p>
 <p>Agent logs can contain prompts, tool arguments, results, credentials,
-or personal information. Only import data you are allowed to inspect,
-and review exports before sharing them. Local processing does not redact
-or encrypt content for you.</p>
-<h2 id="sample-logs-and-consent">Sample logs and consent</h2>
-<p>We never collect real user logs. The built-in “Load sample” traces
-are synthetic. If we ever ask for sample logs to improve parsers, we
-will ask you first, explain what we need and why, and only use what you
-choose to send after you agree.</p>
-<h2 id="pro-features">Pro features</h2>
-<p>Pro ($9/month or $49 one-time) adds features such as cost dashboards,
-reports, and unlimited history. Any future Pro feature that sends data
-off your device, such as cloud sharing, will be opt-in, and this policy
-will be updated before it launches to describe exactly what is sent,
-where, and for how long. The free version will stay network-free.</p>
+or personal information. Only import data you are allowed to inspect. Do
+not import secrets that should not be on this device, and check any view
+or file before sharing it.</p>
+<h2 id="redaction-best-effort-not-a-guarantee">Redaction: best-effort,
+not a guarantee</h2>
+<p>Redaction is local. It is <strong>not</strong> complete secret
+removal and does <strong>not</strong> encrypt stored content.</p>
+<ul>
+<li><strong>Inspector display redaction defaults on</strong> for
+recognized sensitive values.</li>
+<li><strong>JSON and Markdown export redaction defaults on.</strong>
+When enabled, it targets recognized API keys, Bearer tokens, and JWTs
+and includes redaction information and scrubbed-field metadata. You can
+turn export redaction off for data that was not already redacted.</li>
+<li><strong>Import redaction is optional and off by default.</strong>
+When enabled, it scrubs those recognized patterns before storing the
+run.</li>
+</ul>
+<p>Not every secret form is recognized. Review the displayed payload and
+exports yourself before sharing them. The extension also warns that
+redaction does not completely remove secrets.</p>
+<h2 id="local-exports">Local exports</h2>
+<p>At your request, the extension saves files on your device. It never
+shares exports automatically.</p>
+<ul>
+<li><strong>JSON + Markdown:</strong> a re-importable
+<code>trace.json</code> and a <code>bug-report.md</code>. You can export
+the whole trace or a selected call. The same default-redacted view is
+used for both formats. There is no raw stored-run export that bypasses
+this view.</li>
+<li><strong>PNG:</strong> a local snapshot of the on-screen graph. Font
+embedding is skipped and cache-busting is disabled so PNG generation
+does not re-fetch remote resources.</li>
+</ul>
+<p>Imported traces may contain URLs. The extension treats them as data,
+not instructions to fetch remote resources.</p>
 <h2 id="support-email">Support email</h2>
-<p>Support is handled by email at
-<strong>agentdevtools@proton.me</strong>, hosted by Proton Mail. Proton
-encrypts stored mail, and <a
-href="https://proton.me/legal/privacy">Proton’s privacy policy</a>
+<p>Support is handled by email at <strong><a
+href="mailto:agentdevtools@proton.me">agentdevtools@proton.me</a></strong>,
+hosted by Proton Mail. Proton encrypts stored mail, and <a
+href="https://proton.me/legal/privacy">Proton's privacy policy</a>
 covers how messages are transmitted and stored. We keep support threads
 only as long as needed to reply, never use them for marketing, and
-delete them on request. Please don’t send raw traces, keys, or other
+delete them on request. Please don't send raw traces, keys, or other
 secrets in a support email.</p>
+<p>Email support and visiting this public privacy page are separate from
+the extension's local operation. Neither is required to use the
+extension.</p>
 <h2 id="changes">Changes</h2>
 <p>If this policy changes, the updated version and its effective date
 will be posted at this same address.</p>
 <h2 id="contact">Contact</h2>
-<p>Questions about this policy:
-<strong>agentdevtools@proton.me</strong></p>
+<p>Questions about this policy: <strong><a
+href="mailto:agentdevtools@proton.me">agentdevtools@proton.me</a></strong></p>
 </body>
 </html>
